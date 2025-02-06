@@ -17,7 +17,7 @@ RUN sudo apt update && sudo apt install ffmpeg
 # Python dependencies
 COPY requirements.txt /requirements.txt
 RUN python3.11 -m pip install --upgrade pip && \
-    python3.11 -m pip install --constraint constraints.txt -r /requirements.txt --no-cache-dir && \
+    python3.11 -m pip install --constraint /constraints.txt -r /requirements.txt --no-cache-dir && \
     rm /requirements.txt
 
 # NOTE: The base image comes with multiple Python versions pre-installed.
