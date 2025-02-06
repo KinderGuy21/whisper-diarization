@@ -15,7 +15,7 @@ FROM runpod/base:0.4.0-cuda11.8.0
 RUN sudo apt update && sudo apt install ffmpeg
 
 # Python dependencies
-COPY builder/requirements.txt /requirements.txt
+COPY requirements.txt /requirements.txt
 RUN python3.11 -m pip install --upgrade pip && \
     python3.11 -m pip install --c constraints.txt -r /requirements.txt --no-cache-dir && \
     rm /requirements.txt
